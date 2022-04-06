@@ -6,7 +6,7 @@
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 16:56:56 by merlich           #+#    #+#             */
-/*   Updated: 2022/04/05 23:30:02 by merlich          ###   ########.fr       */
+/*   Updated: 2022/04/06 20:59:30 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@
 
 # define ERROR_ARGS	"Check your input!\n\
 The program takes the following arguments: \n\
-1) number_of_philosophers \n\
-2) time_to_die\n\
-3) time_to_eat\n\
-4) time_to_sleep\n\
+1) number_of_philosophers (value > 0)\n\
+2) time_to_die (value > 60 ms)\n\
+3) time_to_eat (value > 60 ms)\n\
+4) time_to_sleep (value > 60 ms)\n\
 5) [number_of_times_each_philosopher_must_eat] (optional argument)\n"
 
 typedef struct s_philo
@@ -67,6 +67,9 @@ typedef struct s_thread
 
 /* ft_atoi.c */
 int				ft_atoi(const char *str);
+
+/* ft_check_input.c */
+int				ft_check_input(t_philo data);
 
 /* ft_live.c */
 void			*ft_live(void *args);

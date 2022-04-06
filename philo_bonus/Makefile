@@ -6,13 +6,15 @@
 #    By: merlich <merlich@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/09 16:56:53 by merlich           #+#    #+#              #
-#    Updated: 2022/04/05 23:00:39 by merlich          ###   ########.fr        #
+#    Updated: 2022/04/06 22:44:15 by merlich          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	philo
 
-SRCS	=	main.c ft_live.c time.c ft_atoi.c
+SRCS	=	main_bonus.c ft_check_input_bonus.c ft_live_bonus.c \
+			time_bonus.c ft_atoi_bonus.c child_bonus.c \
+			init_bonus.c monitoring_bonus.c threads_bonus.c
 
 OBJS	=	${SRCS:.c=.o}
 

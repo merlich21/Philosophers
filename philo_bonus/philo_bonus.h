@@ -6,7 +6,7 @@
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 16:56:56 by merlich           #+#    #+#             */
-/*   Updated: 2022/04/05 23:54:33 by merlich          ###   ########.fr       */
+/*   Updated: 2022/04/06 22:59:55 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,10 @@ typedef struct s_philo
 	int				is_limited;
 
 	sem_t			*sem_fork;
-	pid_t			*all_pids;
+	sem_t			*sem_death;
 
 	unsigned long	start_time;
-	
+
 	pid_t			process;
 	int				number;
 	int				eat_status;
@@ -58,17 +58,27 @@ typedef struct s_philo
 
 }	t_philo;
 
+/* child.c */
+void			ft_create_philos(t_philo *data);
+
 /* ft_atoi.c */
 int				ft_atoi(const char *str);
 
 /* init.c */
-void	ft_init(t_philo *data, int argc, char **argv);
+void			ft_init(t_philo *data, int argc, char **argv);
+
+/* ft_check_input.c */
+void			ft_check_input(t_philo data);
+
+/* threads.c */
+void			ft_create_detector(t_philo *data);
+void			ft_detach_detector(t_philo *data);
 
 /* monitoring.c */
-
+void			*ft_monitoring(void *args);
 
 /* ft_live.c */
-void			*ft_live(t_philo *data);
+void			ft_live(t_philo *data);
 void			ft_display(t_philo data, int flag);
 
 /* time.c */

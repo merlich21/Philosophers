@@ -6,7 +6,7 @@
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:24:55 by merlich           #+#    #+#             */
-/*   Updated: 2022/04/05 22:36:34 by merlich          ###   ########.fr       */
+/*   Updated: 2022/04/06 20:58:23 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,10 +99,15 @@ int	main(int argc, char **argv)
 
 	philos = NULL;
 	if (argc < 5 || argc > 6)
+	{
 		printf(ERROR_ARGS);
+		return (1);
+	}
 	else
 	{
 		ft_init(&data, argc, argv);
+		if (ft_check_input(data))
+			return (1);
 		if (ft_create_mutexes(&data))
 			return (1);
 		data.start_time = ft_gettime_ms(data);
