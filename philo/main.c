@@ -78,6 +78,7 @@ static int	ft_monitoring(t_thread *philos, t_philo *data)
 	res = 0;
 	while (1)
 	{
+		usleep(10000);
 		res = ft_catch_death(philos, data);
 		if (res != 1)
 			break ;
